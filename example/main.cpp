@@ -1,16 +1,15 @@
 #include <iostream>
 #include <dlfcn.h>
 
-#include "base.h"
-#include "dl_loader.h"
+#include "base_handler.h"
 
-static const std::string drivedPath = "libdrived.dylib";
+static const std::string derived_path = "../derived/libderived.dylib";
 
 int main()
 {
-  BaseHandler handler;
+  BaseHandler handler(derived_path);
   auto drived = handler.create();
-  drived->set_value(10);
+  drived->set_value(15);
   std::cout << drived->get_value() << std::endl;
   return 0;
 }

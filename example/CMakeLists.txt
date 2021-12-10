@@ -9,9 +9,7 @@ endif()
 
 add_executable(main main.cpp)
 
-find_library(BASE libbase.dylib PATHS ${CMAKE_SOURCE_DIR}/install/lib)
-
-target_link_libraries(main PUBLIC ${BASE})
+target_link_libraries(main PUBLIC base)
 
 set_target_properties(main PROPERTIES
     CXX_STANDARD 17
@@ -19,5 +17,5 @@ set_target_properties(main PROPERTIES
     CXX_EXTENSIONS NO
 )
 
-target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/install/include)
+target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/include)
 target_include_directories(main PRIVATE ${PROJECT_SOURCE_DIR}/include)

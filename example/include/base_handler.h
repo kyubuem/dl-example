@@ -1,10 +1,8 @@
-#ifndef _DL_LOADER_H_
-#define _DL_LOADER_H_
+#ifndef _BASE_HANDLER_H_
+#define _BASE_HANDLER_H_
 
 #include "base.h"
 #include <dlfcn.h>
-
-#include "base.h"
 
 class BaseHandler
 {
@@ -13,9 +11,9 @@ private:
   Base_creator_t creator = nullptr;
 
 public:
-  BaseHandler()
+  explicit BaseHandler(const std::string& lib_path)
   {
-    _handle = dlopen("libdrived.dylib", RTLD_NOW);
+    _handle = dlopen(lib_path.c_str(), RTLD_NOW);
     if (!_handle)
     {
       throw std::runtime_error(dlerror());

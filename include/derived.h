@@ -3,11 +3,11 @@
 
 #include "base.h"
 
-class Drived : public Base
+class Derived : public Base
 {
 public:
-  Drived();
-  virtual ~Drived();
+  Derived();
+  virtual ~Derived();
 
   void set_value(const int a) override;
   int get_value() const override;

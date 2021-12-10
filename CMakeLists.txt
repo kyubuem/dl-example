@@ -8,7 +8,7 @@ set(CXX_STANDARD 17 CACHE STRING "The C++ standard to use")
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install)
 
 add_subdirectory(base)
-add_subdirectory(drived)
+add_subdirectory(derived)
 add_subdirectory(example)
 
 install(DIRECTORY include DESTINATION ${CMAKE_INSTALL_PREFIX})
